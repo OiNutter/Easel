@@ -51,18 +51,17 @@ package oinutter.easel {
 		}
 		
 		public static function grayscale(color:Number) {
-			
+			var rgb:Object = getRGB(color)
 		}
 		
 		public static function complement(color:Number) {
-				var r = initialColor >>> 16 & 0xFF,
-				g = initialColor >>> 8 & 0xFF,
-				b = initialColor & 0xFF,
-				rc = r ^ 0xFF,
-				gc = g ^ 0xFF,
-				bc = b ^ 0xFF;
-
-				return rc << 16 | gc << 8 | bc
+			var rgb:Object = getRGB(color),
+							
+			for (var ele in rgb)
+				rgb[ele] = rgb[ele] ^ 0xFF;
+			}
+			
+			return (getHex(rgb.r, rgb.g, rgb.b));
 		}
 		
 		public static function getHex(r:Number, g:Number, b:Number):Number{
