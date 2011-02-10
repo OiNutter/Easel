@@ -13,4 +13,3 @@ Complement - <code>Easel.complement(colour);</code>
 Desaturate - <code>Easel.desaturate(colour,ratio);</code>
 Saturate - <code>Easel.saturate(colour,ratio);</code>
 Grayscale - <code>Easel.grayscale(colour);</code>
-

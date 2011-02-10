@@ -44,13 +44,17 @@ package oinutter.easel {
 		public static function desaturate(color:Number, ratio:Number) {
 			var hsl:Object = getHSL(color);
 			hsl.s -= (100 * ratio);
+			if (hsl.s < 0)
+				hsl.s = 0;
 			var rgb = hslToRgb(hsl);
 			return getHex(rgb.r, rgb.g,rgb.b);
 		}
 		
 		public static function saturate(color:Number, ratio:Number) {
 			var hsl:Object = getHSL(color);
-			hsl.s += (100*ratio);
+			hsl.s += (100 * ratio);
+			if (hsl.s > 100)
+				hsl.s = 100;
 			var rgb = hslToRgb(hsl);
 			return getHex(rgb.r, rgb.g,rgb.b);
 		}
@@ -137,7 +141,7 @@ package oinutter.easel {
 			else if (h * 2 < 1)
 				return m2;
 			else if (h * 3 < 2)
-				return m1 + (m2 - m1) * (2.0 / 3 - h) * 6;
+				return m1 + (m2 - m1) * ((2.0 / 3) - h) * 6;
 			else
 				return m1;
 		}
