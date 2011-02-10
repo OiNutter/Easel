@@ -35,7 +35,7 @@ package oinutter.easel {
 		public static function darken(color:Number, ratio:Number) {
 			var hsl:Object = getHSL(color);
 			hsl.l -= (100 * ratio);
-			if (hsl.l < 100)
+			if (hsl.l < 0)
 				hsl.l = 0;
 			var rgb = hslToRgb(hsl);
             return (getHex(rgb.r, rgb.g, rgb.b));

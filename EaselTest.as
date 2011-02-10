@@ -13,7 +13,7 @@ package  {
 		
 		public function EaselTest() {
 			
-			var origColour = 0xb3eeb6;//Math.round(Math.random() * 0xFFFFFF);
+			var origColour = Math.round(Math.random() * 0xFFFFFF);
 			var mixer = 0xFF3232;
 						
 			var orig = new Shape();
